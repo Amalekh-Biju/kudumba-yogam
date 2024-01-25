@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/css/bundle';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
+import 'swiper/swiper-bundle.css';
+import SwiperCore from 'swiper/core';
+
 import './home.css';
 import slide_image_1 from '../../assets/images/slide1.jpg';
 import slide_image_2 from '../../assets/images/slide2.jpg';
 import slide_image_3 from '../../assets/images/slide3.jpg';
 import slide_image_4 from '../../assets/images/slide4.jpg';
-Swiper.modules = [Navigation, Pagination, Scrollbar, A11y];
+import  { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
+
+// install Swiper modules
+SwiperCore.use([Autoplay, Navigation,Pagination ]);
 
 function Home() {
   return (
@@ -28,21 +29,21 @@ function Home() {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
-        navigation={true}
+        loop={true} // Enable infinite looping
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        className="mySwiper"
+        navigation={true}
+        pagination={true}
       >
-        <SwiperSlide><img src={slide_image_1} alt="Slide 1" className="slide-image" /></SwiperSlide>
-        <SwiperSlide><img src={slide_image_2} alt="Slide 2" className="slide-image" /></SwiperSlide>
-        <SwiperSlide><img src={slide_image_3} alt="Slide 3" className="slide-image" /></SwiperSlide>
-        <SwiperSlide><img src={slide_image_4} alt="Slide 4" className="slide-image" /></SwiperSlide>
+        <SwiperSlide><img src={slide_image_1} alt="Slide 1" /></SwiperSlide>
+        <SwiperSlide><img src={slide_image_2} alt="Slide 2" /></SwiperSlide>
+        <SwiperSlide><img src={slide_image_3} alt="Slide 3" /></SwiperSlide>
+        <SwiperSlide><img src={slide_image_4} alt="Slide 4" /></SwiperSlide>
       </Swiper>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
