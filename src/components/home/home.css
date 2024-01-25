@@ -1,27 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&display=swap');
+
+
 .home {
     width: 100%;
     height: 100vh;
     display: flex;
+
     justify-content: center;
     align-items: center;
+    flex-wrap:wrap;
   }
   
   .mySwiper {
-    width: 80%;
-    height: 80%;
+    width: 100%; /* Adjust this */
+    height: 50vh; /* Adjust this */
+    z-index: 999;
   }
   
   .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
+   
   }
   
   img {
-    width: 90%;
+    width: 80%;
     height: 90%;
     object-fit: cover;
     border-radius: 20px;
+    margin-right: 10%;
+    margin-left: 10%;
   }
   
   .swiper-pagination-bullet-active {
@@ -30,4 +39,22 @@
   
   .swiper-button-next, .swiper-button-prev {
     color: #007aff;
+  }
+
+  .text-after-swiper {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: "Anek Malayalam", sans-serif;
+  }
+  
+  .text-after-swiper h1 {
+    font-size: 8em;
+    color: #702400;
+
+  }
+  
+  .text-after-swiper p {
+    font-size: 1.5em;
+    color: #666;
   }
